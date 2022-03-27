@@ -1,3 +1,3 @@
 # My VimWiki
 
-- Install scripts: [install.md](install.md)
+- Install scripts: [install.md](install.md) (Odin has a seperate file: [Odin](odin.md))

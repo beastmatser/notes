@@ -3,6 +3,7 @@
 - [Programming languages](#programming-languages)
 - [Zsh](#zsh)
 - [Neovim](#neovim)
+- [Vscode](#vscode)
 
 ## Programming Languages
 
@@ -46,16 +47,7 @@ sudo apt install build-essential -y
 
 ### Odin
 
-```sh
-git clone https://github.com/odin-lang/Odin
-cd Odin
-printf "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-12 main" |sudo tee /etc/apt/sources.list.d/llvm-toolchain-xenial-12.list
-wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key |sudo apt-key add -
-sudo apt update
-sudo apt install llvm-11
-sudo apt install clang
-make
-```
+Odin has some more tools to configure, click [here](odin.md) for a more precise guide.
 
 ### Nim
 
@@ -102,7 +94,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 ### Neovim
 
-1. Go to [releases](http://github.com/neovim/neovim/releases]) on the neovim repository
+1. Go to [releases](http://github.com/neovim/neovim/releases) on the neovim repository
 2. Download `nvim.appimage`
 3. Run to fully install neovim:
 
@@ -121,3 +113,50 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
 And run `:PlugInstall`
+
+### Neoclide extensions
+
+```
+:CocInstall coc-marketplace coc-yaml coc-vimlsp coc-tsserver coc-tslint coc-toml coc-rust-analyzer coc-pyright coc-prettier coc-pairs coc-json
+```
+
+## Vscode
+
+### Plugins
+
+```sh
+code --install-extension bungcip.better-toml
+code --install-extension formulahendry.code-runner
+code --install-extension smugller.c-go-syntax-highlighter-pros
+code --install-extension leonardssh.vscord
+code --install-extension editorconfig.editorconfig
+code --install-extension irongeek.vscode-env
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension file-icons.file-icons
+code --install-extension github.copilot
+code --install-extension github.vscode-pull-request-github
+code --install-extension eamodio.gitlens
+code --install-extension davidwang.ini-for-vscode
+code --install-extension ritwickdey.liveserver
+code --install-extension magicstack.magicpython
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension davidanson.vscode-markdownlint
+code --install-extension mateushenriquenascimentosoares.mit-license-generator
+code --install-extension kosz78.nim
+code --install-extension danielgavin.ols
+code --install-extension esbenp.prettier-vscode
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-python.python
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-vscode-remote.remote-ssh
+code --install-extension ms-vscode-remote.remote-ssh-edit
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension matklad.rust-analyzer
+code --install-extension foxundermoon.shell-format
+code --install-extension tyriar.sort-lines
+code --install-extension alexcvzz.vscode-sqlite
+code --install-extension beastmatser.ti-basic-autocomplete
+code --install-extension xadillax.viml
+code --install-extension redhat.vscode-yaml
+```
+
