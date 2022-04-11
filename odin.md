@@ -8,7 +8,7 @@ cd Odin
 printf "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-12 main" |sudo tee /etc/apt/sources.list.d/llvm-toolchain-xenial-12.list
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key |sudo apt-key add -
 sudo apt update
-sudo apt install llvm-11
+sudo apt install llvm-12
 sudo apt install clang
 make
 ```

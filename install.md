@@ -10,20 +10,13 @@
 ### Python
 
 ```sh
-sudo apt update
-sudo apt upgrade -y
-sudo apt install software-properties-common -y
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-sudo apt update
-sudo apt install python3.10 -y
-sudo apt install python3.9 -y
-sudo apt install python3.8 -y
-sudo apt install python3.7 -y
-sudo apt install python3.6 -y
-
-# Install venv for python3.10
-sudo apt install python3.10-venv -y
-mkdir ~/.venv
+sudo apt install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl \
+git
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+pyenv install 3.10.x
+pyenv global 3.10.x
 ```
 
 ### Javascript
@@ -33,7 +26,7 @@ curl -sL https://deb.nodesource.com/setup_17.x | sudo -E bash
 sudo apt install nodejs -y
 
 # Install yarn
-sudo npm install -g yarn
+sudo npm install -g pnpm
 ```
 
 ### Rust
@@ -68,7 +61,7 @@ sdk install kotlin
 
 ## Zsh
 
-### Zsh and oh-my-zsh
+### Zsh
 
 ```sh
 sudo apt install zsh -y
@@ -76,18 +69,6 @@ sudo apt install zsh -y
 # set shell to zsh
 chsh -s $(which zsh)
 
-# Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-```
-
-### Plugins
-
-```sh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
 ```
 
 ## Neovim
@@ -159,4 +140,3 @@ code --install-extension beastmatser.ti-basic-autocomplete
 code --install-extension xadillax.viml
 code --install-extension redhat.vscode-yaml
 ```
-
