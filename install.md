@@ -1,9 +1,25 @@
 # Install scripts
 
-- [Programming languages](#programming-languages)
-- [Zsh](#zsh)
-- [Neovim](#neovim)
-- [Vscode](#vscode)
+- [Install scripts](#install-scripts)
+  - [Programming Languages](#programming-languages)
+    - [Python](#python)
+    - [Javascript](#javascript)
+    - [Rust](#rust)
+    - [Odin](#odin)
+      - [Install Odin](#install-odin)
+      - [Install ols](#install-ols)
+      - [Ols config](#ols-config)
+      - [Setup neoclide with ols](#setup-neoclide-with-ols)
+    - [Nim](#nim)
+    - [Kotlin](#kotlin)
+  - [Zsh](#zsh)
+    - [Zsh](#zsh-1)
+  - [Neovim](#neovim)
+    - [Neovim](#neovim-1)
+    - [VimPlug](#vimplug)
+    - [Neoclide extensions](#neoclide-extensions)
+  - [Vscode](#vscode)
+    - [Plugins](#plugins)
 
 ## Programming Languages
 
@@ -40,7 +56,60 @@ sudo apt install build-essential -y
 
 ### Odin
 
-Odin has some more tools to configure, click [here](odin.md) for a more precise guide.
+#### Install Odin
+
+```sh
+git clone https://github.com/odin-lang/Odin
+cd Odin
+printf "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-12 main" |sudo tee /etc/apt/sources.list.d/llvm-toolchain-xenial-12.list
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key |sudo apt-key add -
+sudo apt update
+sudo apt install llvm-12
+sudo apt install clang
+sudo update-alternatives --install \
+    /usr/bin/llvm-config       llvm-config      /usr/bin/llvm-config-12  200
+make
+```
+
+#### Install ols
+
+```sh
+git clone https://github.com/DanielGavin/ols
+cd ols
+source build.sh
+```
+
+#### Ols config
+
+```json
+{
+  "collections": [{ "name": "core", "path": "/home/user/Odin/core" }],
+  "thread_pool_count": 4,
+  "enable_semantic_tokens": false,
+  "enable_document_symbols": true,
+  "enable_hover": true,
+  "enable_format": true,
+  "enable_snippets": true,
+  "formatter": {
+    "tabs": false,
+    "characters": 90
+  }
+}
+```
+
+#### Setup neoclide with ols
+
+```json
+{
+  "languageserver": {
+    "odin": {
+      "command": "ols",
+      "filetypes": ["odin"],
+      "rootPatterns": ["/home/user/ols.json"]
+    }
+  }
+}
+```
 
 ### Nim
 
@@ -75,15 +144,12 @@ chsh -s $(which zsh)
 
 ### Neovim
 
-1. Go to [releases](http://github.com/neovim/neovim/releases) on the neovim repository
-2. Download `nvim.appimage`
-3. Run to fully install neovim:
-
 ```sh
-chmod u+x nvim.appimage && ./nvim.appimage
-# export PATH="$PATH:$HOME/bin" must be added in the .zshrc file
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
 mkdir -p ~/bin
-mv nvim.appimage ~/bin/nvim
+mv ./nvim.appimage ~/bin/nvim.appimage
 ```
 
 ### VimPlug
