@@ -12,6 +12,7 @@
       - [Setup neoclide with ols](#setup-neoclide-with-ols)
     - [Nim](#nim)
     - [Kotlin](#kotlin)
+    - [Go](#go)
   - [Zsh](#zsh)
     - [Zsh](#zsh-1)
   - [Neovim](#neovim)
@@ -126,6 +127,14 @@ sudo apt install default-jdk
 sudo apt install zip unzip -y
 curl -s https://get.sdkman.io | bash
 sdk install kotlin
+```
+
+### Go
+
+```sh
+wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
+tar -zxvf go1.18.linux-amd64.tar.gz
+sudo mv go /usr/local/go
 ```
 
 ## Zsh
