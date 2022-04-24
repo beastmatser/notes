@@ -1,5 +1,7 @@
 [book]
 title = "vimwiki"
-author = "beastmatser"
-language = "en"
+authors = ["beastmatser"]
+src = "src"
 description = "My personal vimwiki"
+language = "en"
+multilingual = false

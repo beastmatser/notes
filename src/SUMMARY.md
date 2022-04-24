@@ -11,3 +11,5 @@
   - [Tools](./install/tools/index.md)
     - [Neovim](./install/tools/neovim.md)
     - [VimPlug](./install/tools/vimplug.md)
+    - [Fish](./install/tools/fish.md)
+  - [Dotfiles](install/dotfiles/dotfiles.md)
