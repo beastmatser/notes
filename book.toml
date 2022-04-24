@@ -1,7 +1,10 @@
 [book]
-title = "vimwiki"
+title = "notes"
 authors = ["beastmatser"]
 src = "src"
-description = "My personal vimwiki"
+description = "My personal notes"
 language = "en"
 multilingual = false
+
+[output.html]
+git-repository-url = "https://github.com/beastmatser/notes"
