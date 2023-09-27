@@ -22,3 +22,12 @@ Then you can move it to somewhere in your $PATH. To keep our home directory clea
 mkdir -p ~/bin
 mv ./nvim.appimage ~/bin/nvim
 ```
+
+Incase nvim fails to open, try the following:
+
+```sh
+./nvim.appimage --appimage-extract
+./squashfs-root/AppRun --version
+
+sudo apt install libfuse2
+```
